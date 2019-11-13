@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Workouts</title>
+</head>
+<body>
+    <nav>
+        <a href="/">Users</a>
+        <a href="{% url 'create_workout' %}">Add a workout plan!</a>
+    </nav>
+    {% block content %} 
+    {% endblock %}
+</body>
+</html>

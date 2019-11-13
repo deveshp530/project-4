@@ -1,0 +1,14 @@
+{% extends 'workout/base.html' %}
+{% block content %}
+
+<h1>{{ workout.user }} workout</h1>
+<h3>Name = {{ workout.what_day }}</h3>
+
+<h2>{{ workout.workout }}</h2>
+
+<a href="{% url 'edit_workout' pk=workout.pk%}" id="edit">Change plan!</a>
+<a href="{% url 'delete_workout' pk=workout.pk%}" id="delete">Delete plan!</a>
+
+
+{% endblock %}
+
