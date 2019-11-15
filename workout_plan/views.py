@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from .models import WorkoutPlan,User
 from .forms import WorkoutForm
 
@@ -12,6 +13,7 @@ def workout_list(request, pk):
     workout = WorkoutPlan.objects.get(id=pk)
     return render(request, 'workout/workout_list.html', {'workout' : workout})
 
+@login_required
 def create_workout(request):
     if request.method == 'POST':
         form = WorkoutForm(request.POST)
@@ -31,10 +33,12 @@ def edit_workout(request,pk):
             return redirect('user_list', pk=workout.pk)
     else:
         form = WorkoutForm(instance=workout)
-        return render(request, 'workout/workout_form.html', {'form': form})
+        return render(request, 'workout/workout_list.html', {'form': form})
 
+@login_required
 def delete_workout(request,pk):
     WorkoutPlan.objects.get(id=pk).delete()
+    User.objects.get(id=pk).delete()
     return redirect('user_list')
 
 
