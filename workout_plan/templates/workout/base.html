@@ -18,12 +18,12 @@
       <nav>
         <a href="/">Users</a>
         <a href="{% url 'create_workout' %}">Add a workout plan!</a>
+        <a href="{% url 'signup' %}" id="signup">Sign Up</a>
         {% if user.is_authenticated %} Welcome, {{ user.username }}
         <a href="{% url 'logout' %}" id="logout">Log out</a>
         {% else %}
         <a href="{% url 'login' %}" id="login">Login</a>
         {% endif %}
-        <a href="{% url 'signup' %}" id="signup">Sign Up</a>
       </nav>
     </div>
     {% block content %} {% endblock %}

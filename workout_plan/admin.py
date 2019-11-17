@@ -1,7 +1,19 @@
 from django.contrib import admin
-from .models import WorkoutPlan, User
+from .models import WorkoutPlan
+from django.contrib.auth import get_user_model
+from django.contrib.auth.admin import UserAdmin
+# from .forms import CustomUserCreationForm, CustomUserChangeForm
 
-# Register your models here.
+# class CustomUserAdmin(UserAdmin):
+#     add_form = CustomUserCreationForm
+#     form = CustomUserChangeForm
+#     model = User
+#     list_display = ['email', 'username',]
+
+
+
+# # Register your models here.
+# admin.site.register(User, CustomUserAdmin)
 admin.site.register(WorkoutPlan)
-admin.site.register(User)
+
 

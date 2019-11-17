@@ -3,7 +3,7 @@
 <ul>
     {% for users in user %}
     <li>
-        <a href="{% url 'workout_list' pk=users.pk %}" class="name">{{ users.name }}</a>
+        <a href="{% url 'workout_list' pk=users.pk %}" class="name">{{ users.username }}</a>
     </li>
     {% endfor %}
 </ul>

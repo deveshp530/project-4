@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'accounts',
     'social_django',
+    # 'workout_plan.apps.WorkoutPlanConfig',
 ]
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
@@ -49,6 +50,7 @@ LOGIN_REDIRECT_URL = '/'
 
 SOCIAL_AUTH_FACEBOOK_KEY = config('Facebook_ID', cast=str)
 SOCIAL_AUTH_FACEBOOK_SECRET = config('Facebook_Secret', cast=str)
+
 
 
 MIDDLEWARE = [
