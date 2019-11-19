@@ -5,17 +5,5 @@ from .models import WorkoutPlan, User
 class WorkoutForm(forms.ModelForm):
     class Meta:
         model = WorkoutPlan
-        fields = ('user', 'what_day','workout')
-
-# class CustomUserCreationForm(UserCreationForm):
-
-#     class Meta:
-#         model = User
-#         fields = ('username', 'email')
-
-# class CustomUserChangeForm(UserChangeForm):
-
-#     class Meta:
-#         model = User
-#         fields = ('username', 'email')
+        fields = ('user', 'what_day', 'workout')
 

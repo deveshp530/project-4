@@ -9,23 +9,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="{% static 'css/workout.css' %}" />
+    <link rel="stylesheet" href="{% static 'materialize/css/materialize.css' %}" />
     <title>Workouts</title>
   </head>
   <body>
-    <div class="header">
       <h1>Find a different workout!</h1>
+    <div class="navbar-fixed ">
       <nav>
-        <a href="/">Users</a>
-        <a href="{% url 'create_workout' %}">Add a workout plan!</a>
-        <a href="{% url 'signup' %}" id="signup">Sign Up</a>
-        {% if user.is_authenticated %} Welcome, {{ user.username }}
-        <a href="{% url 'logout' %}" id="logout">Log out</a>
+        <div class="nav-wrapper light-blue accent-3">
+          <ul class="left ">
+        <li><a href="/" class="hoverable">Users</a></li>
+        <li><a href="{% url 'create_workout'  %}" class="hoverable">Add a workout plan!</a></li>
+        <li><a href="{% url 'signup' %}"  class="hoverable">Sign Up</a></li>
+        {% if user.is_authenticated %} 
+        Welcome, {{ user.username }}
+        <li> <a href="{% url 'logout' %}" class="hoverable">Log out</a></li>
         {% else %}
-        <a href="{% url 'login' %}" id="login">Login</a>
+        <li><a href="{% url 'login' %}"  class="hoverable">Login</a></li>
         {% endif %}
+      </ul>
       </nav>
     </div>
-    {% block content %} {% endblock %}
+    </div>
+    {% block content %} 
+    {% endblock %}
+    <script src="{static 'materialize/js/materialize.js'}"></script>
   </body>
 </html>

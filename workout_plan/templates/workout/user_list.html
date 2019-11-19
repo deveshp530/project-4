@@ -1,9 +1,9 @@
 {% extends 'workout/base.html' %}
 {% block content %}
-<ul>
+<ul class="left row col l11" >
     {% for users in user %}
-    <li>
-        <a href="{% url 'workout_list' pk=users.pk %}" class="name">{{ users.username }}</a>
+    <li class="parallax">
+        <a href="{% url 'workout_list' pk=users.pk %}" class="">{{ users.username }}</a>
     </li>
     {% endfor %}
 </ul>

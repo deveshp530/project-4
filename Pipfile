@@ -11,6 +11,8 @@ psycopg2-binary = "*"
 django-extensions = "*"
 social-auth-app-django = "*"
 python-decouple = "*"
+gunicorn = "*"
+django-heroku = "*"
 
 [requires]
 python_version = "3.7"
