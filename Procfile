@@ -1,1 +1,1 @@
-web: gunicorn myproject.wsgi
+web: gunicorn workout_plan_django.wsgi
