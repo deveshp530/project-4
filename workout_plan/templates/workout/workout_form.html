@@ -1,6 +1,14 @@
 {% extends 'workout/base.html' %} 
 {% block content %}
 
+{% if form.errors %}
+  <ul>
+    {% for error in form.errors %} 
+      <li>{{ error }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
 <h3>New Plan</h3>
 <h4>User: {{user.username}}</h4>
 <div class="container">

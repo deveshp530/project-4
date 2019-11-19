@@ -20,7 +20,8 @@ def create_workout(request):
             workout = form.save()
             return redirect('workout_list', pk=workout.pk)
     else:
-        form = WorkoutForm()
+        # initial ={'user': request.user.username}
+        form = WorkoutForm(initial ={'user': request.user.username})
     return render(request, 'workout/workout_form.html', {'form': form})
     
 def edit_workout(request,pk):
@@ -31,7 +32,8 @@ def edit_workout(request,pk):
             workout = form.save()
             return redirect('workout_list', pk=workout.pk)
     else:
-        form = WorkoutForm(instance=workout)
+        # initial = {'user': request.user.username}        
+        form = WorkoutForm(initial ={'user': request.user.username}, instance=workout)
     return render(request, 'workout/workout_form.html', {'form': form})
 
 @login_required
